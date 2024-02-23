@@ -54,4 +54,6 @@ public class Cart {
     public Cart() {
     }
 
+    public void add(CartItem item) {
+    }
 }
