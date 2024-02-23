@@ -7,6 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Table(name = "customers")
@@ -20,19 +21,19 @@ public class Customer {
     @Column(name = "customer_id")
     private Long id;
 
-    @Column(name = "customer_first_name")
+    @Column(name = "customer_first_name", nullable = false)
     private String firstName;
 
-    @Column(name = "customer_last_name")
+    @Column(name = "customer_last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "address")
+    @Column(name = "address", nullable = false)
     private String address;
 
-    @Column(name = "postal_code")
+    @Column(name = "postal_code", nullable = false)
     private String postal_code;
 
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = false)
     private String phone;
 
     @Column(name = "create_date")
@@ -44,11 +45,11 @@ public class Customer {
     private Date last_update;
 
     @ManyToOne
-    //@Column(name = "customer_id", nullable = false)
+    @JoinColumn(name = "division_id", nullable = false)
     private Division division;
 
-    @OneToMany//(cascade = CascadeType.ALL, mappedBy = "customer")
-    private Set<Cart> carts;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
+    private Set<Cart> carts = new HashSet<>();
 
     public Customer() {
     }
