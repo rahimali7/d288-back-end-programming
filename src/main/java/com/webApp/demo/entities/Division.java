@@ -44,6 +44,7 @@ public class Division {
     public Division() {
     }
 
+
     public void setCountry(Country country) {
         setCountry_id(country.getId());
         this.country = country;
