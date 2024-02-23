@@ -44,10 +44,10 @@ public class Customer {
     private Date last_update;
 
     @ManyToOne
-    @Column(name = "division_id")
+    //@Column(name = "customer_id", nullable = false)
     private Division division;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
+    @OneToMany//(cascade = CascadeType.ALL, mappedBy = "customer")
     private Set<Cart> carts;
 
     public Customer() {

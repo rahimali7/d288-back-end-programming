@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Set;
 
-@Table(name = "carts")
+//@Table(name = "carts")
 @Entity
 @Getter
 @Setter
@@ -42,13 +42,12 @@ public class Cart {
     private Date last_update;
 
     @ManyToOne
-    @Column(name = "customer_id")
     private Customer customer;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart")
+    @OneToMany//(cascade = CascadeType.ALL, mappedBy = "cart")
     private Set<CartItem> cartItem;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(value = EnumType.STRING)
     private StatusType statusType;
 
     public Cart() {

@@ -39,7 +39,7 @@ public class Excursion {
     private Date last_update;
 
     @ManyToOne
-    @Column(name = "vacation_id")
+    //@Column(name = "vacation_id")
     private Vacation vacation;
 
     @ManyToMany

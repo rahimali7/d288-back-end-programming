@@ -38,7 +38,7 @@ public class Division {
     @Column(name = "country_id")
     private Long country_id;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "division")
+    @OneToMany//(cascade = CascadeType.ALL, mappedBy = "division")
     private Set<Customer> customers;
 
     public Division() {

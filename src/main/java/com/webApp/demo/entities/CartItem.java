@@ -19,14 +19,15 @@ public class CartItem {
     @Column(name = "cart_item_id")
     private Long id;
 
-    @Column(name = "vacation_id")
+    @ManyToOne()
+    //@Column(name = "vacation_id")
     private Vacation vacation;
 
-    @ManyToMany(mappedBy = "cart_items")
+    @ManyToMany(mappedBy = "cartItems")
     private Set<Excursion> excursions;
 
     @ManyToOne
-    @Column(name = "cart_id")
+    //@Column(name = "cart_id")
     private Cart cart;
 
     @Column(name = "create_date")
