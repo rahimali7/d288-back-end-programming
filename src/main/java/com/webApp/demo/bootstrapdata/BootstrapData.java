@@ -1,4 +1,4 @@
-package com.webApp.demo;
+package com.webApp.demo.bootstrapdata;
 
 import com.webApp.demo.dao.CustomerRepository;
 import com.webApp.demo.dao.DivisionRepository;
