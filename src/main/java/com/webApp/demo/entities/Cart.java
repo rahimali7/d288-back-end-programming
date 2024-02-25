@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-//@Table(name = "carts")
+@Table(name = "carts")
 @Entity
 @Getter
 @Setter
@@ -31,6 +31,7 @@ public class Cart {
     @Column(name = "party_size")
     private int party_size;
 
+    @Enumerated(value = EnumType.STRING)
     @Column(name = "status")
     private StatusType status;
 
@@ -43,14 +44,12 @@ public class Cart {
     private Date last_update;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart")
     private Set<CartItem> cartItem = new HashSet<>();
 
-    @Enumerated(value = EnumType.STRING)
-    private StatusType statusType;
 
     public Cart() {
     }

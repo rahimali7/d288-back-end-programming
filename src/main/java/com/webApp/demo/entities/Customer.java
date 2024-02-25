@@ -18,7 +18,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer_id")
+    @Column(name = "customer_id", nullable = false)
     private Long id;
 
     @Column(name = "customer_first_name", nullable = false)
@@ -45,7 +45,7 @@ public class Customer {
     private Date last_update;
 
     @ManyToOne
-    @JoinColumn(name = "division_id", nullable = false)
+    @JoinColumn(name = "division_id")
     private Division division;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
@@ -64,5 +64,15 @@ public class Customer {
     }
 
     public void add(Cart cart) {
+
+        if (cart != null) {
+
+            if (carts == null) {
+                carts = new HashSet<>();
+            }
+
+            carts.add(cart);
+            cart.setCustomer(this);
+        }
     }
 }
