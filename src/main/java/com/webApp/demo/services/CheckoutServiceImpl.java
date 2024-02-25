@@ -2,17 +2,13 @@ package com.webApp.demo.services;
 
 import com.webApp.demo.dao.CartRepository;
 import com.webApp.demo.dao.CustomerRepository;
-import com.webApp.demo.dao.dto.Purchase;
-import com.webApp.demo.dao.dto.PurchaseResponse;
 import com.webApp.demo.entities.Cart;
 import com.webApp.demo.entities.CartItem;
 import com.webApp.demo.entities.Customer;
 import com.webApp.demo.entities.StatusType;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 

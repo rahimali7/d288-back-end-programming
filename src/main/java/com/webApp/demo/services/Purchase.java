@@ -1,4 +1,4 @@
-package com.webApp.demo.dao.dto;
+package com.webApp.demo.services;
 
 import com.webApp.demo.entities.Cart;
 import com.webApp.demo.entities.CartItem;

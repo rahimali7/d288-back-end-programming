@@ -1,4 +1,4 @@
-package com.webApp.demo.dao.dto;
+package com.webApp.demo.services;
 
 import lombok.Data;
 import lombok.Getter;

@@ -1,12 +1,9 @@
 package com.webApp.demo.controllers;
 
-import com.webApp.demo.dao.dto.Purchase;
-import com.webApp.demo.dao.dto.PurchaseResponse;
+import com.webApp.demo.services.Purchase;
+import com.webApp.demo.services.PurchaseResponse;
 import com.webApp.demo.services.CheckoutService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.sql.SQLOutput;
 
 @CrossOrigin("http://localhost:4200")
 @RestController
